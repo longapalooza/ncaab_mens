@@ -1,4 +1,4 @@
-const close_time = new Date('2024-02-21 8:35'); // 24 hour time
+const close_time = new Date(new Date('2024-02-21 08:35').toLocaleString('en', {timeZone: 'America/Chicago'}));
 
 const title = "March Madness 2023";
 
