@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         email.addEventListener('input', function() {name_email_check(name, email);});
         next.addEventListener('click', function() {next_button(0);});
         
+        name.addEventListener('keypress', function(event) {enter_button(event);});
+        email.addEventListener('keypress', function(event) {enter_button(event);});
+        
     } else {
         body = document.getElementsByTagName('body')[0];
         body.innerHTML = '<h3>Submissions are no longer being accepted for ';
@@ -204,6 +207,13 @@ document.addEventListener('DOMContentLoaded', () => {
         content = content.substring(0, content.length - 25);
         return content;
     };
+    
+    function enter_button(event){
+        if(event.key === 'Enter'){
+            event.preventDefault();
+            document.getElementById('next').click();
+        }
+    }
     
     function is_selected(teamA, teamB){
         let check = teamA.classList.contains('selected') || teamB.classList.contains('selected');
