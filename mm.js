@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             picks[i] = e;
         });
         
-        document.getElementById('title').innerHTML = title;
+        document.title = title;
         
         var name = document.getElementById('name');
         var email = document.getElementById('email');
