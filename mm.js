@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         email.addEventListener('keypress', function(event) {enter_button(event);});
         
     } else {
+        console.log(current_time.getTime());
+        console.log(close_time.getTime());
         body = document.getElementsByTagName('body')[0];
-        body.innerHTML = '<h3>Submissions are no longer being accepted for ';
-        body.innerHTML += title + '.<br><br>See you next year!<h3>';
+        body.innerHTML = '<h3>Submissions are no longer being accepted for ' + title + '.<br><br>See you next year!<h3>';
     }
     
     function create_form_div(game_index){
