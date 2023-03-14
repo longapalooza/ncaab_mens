@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function create_submission_link(){
         var href = form_url;
-        href += 'entry.' + field_ids[0] + '=' + encodeURIComponent(name_) + '&';
-        href += 'entry.' + field_ids[1] + '=' + encodeURIComponent(email_) + '&';
+        href += 'entry.' + field_ids[0] + '=' + name_ + '&';
+        href += 'entry.' + field_ids[1] + '=' + email_ + '&';
 
         var pick_ids = field_ids.slice(2);
         var data = picks.slice(teams.length);
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pick_ids.forEach(function(e, i, a){
             href += 'entry.' + e + '=';
             data[i].forEach(function(e1, i1, a1){
-                href += encodeURIComponent(e1['name']) + '/';
+                href += e1['name'].replace('&', ' and ') + '/';
             });
             href = href.substring(0, href.length - 1) + '&';
         });
