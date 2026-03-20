@@ -1,4 +1,4 @@
-const close_time = new Date(new Date('2026-03-19 11:10').toLocaleString('en', {timeZone: 'America/Chicago'}));
+const close_time = new Date(new Date('2026-03-19 11:00').toLocaleString('en', {timeZone: 'America/Chicago'}));
 
 const title = "March Madness 2026";
 
