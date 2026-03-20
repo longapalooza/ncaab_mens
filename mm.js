@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     let current_time = new Date();
+	
+	document.getElementById('title').innerHTML = title
+	
+	const deadline = close_time.toLocaleString('en-US', {
+														  timeZone: 'America/Chicago',
+														  month: 'numeric',
+														  day: 'numeric',
+														  year: 'numeric',
+														  hour: 'numeric',
+														  minute: '2-digit',
+														  hour12: true,
+														  timeZoneName: 'short'
+														}).replace(',', '');
+	
+	document.getElementById('close_time').innerHTML = deadline
+	
     if(current_time.getTime() < close_time.getTime()){
         var game_index = 0;
         var n_games = teams.length - 1;
@@ -24,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         email.addEventListener('keypress', function(event) {enter_button(event);});
 
     } else {
-        console.log(current_time.getTime());
-        console.log(close_time.getTime());
+        //console.log(current_time.getTime());
+        //console.log(close_time.getTime());
         body = document.getElementsByTagName('body')[0];
         body.innerHTML = '<h3>Submissions are no longer being accepted for ' + title + '.<br><br>See you next year!<h3>';
     }
